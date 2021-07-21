@@ -6,6 +6,11 @@ const PORT = process.env.port || 3001;
 
 const app = express();
 
+// Middleware for parsing post data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Routing for all api calls
 app.use('/api', api);
 
 app.use( express.static('public') );
