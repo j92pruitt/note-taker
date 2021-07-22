@@ -1,5 +1,5 @@
 const notes = require('express').Router();
-const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
+const { readFromFile, readAndAppend, readAndDelete } = require('../helpers/fsUtils');
 const { v4: uuidv4 } = require('uuid');
 
 // GET Route for retrieve information stored in db.json
@@ -30,5 +30,19 @@ notes.post('/', (req, res) => {
         res.json('Error in posting note');
     }
 });
+
+notes.delete('/:id', (req, res) => {
+
+    const id = req.params.id
+
+    readAndDelete(id, './db/db.json');
+
+    const response = {
+        status: 'success',
+        body: id,
+    };
+
+    res.json(response)
+})
 
 module.exports = notes

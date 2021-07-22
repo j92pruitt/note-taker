@@ -1,11 +1,7 @@
 [
     {
-        "title": "Test Title",
-        "text": "Test text"
-    },
-    {
-        "title": "Post Test 1",
-        "text": "Test text",
-        "id": "dcbe40d0-b17b-4a3b-baf2-0e5df294fe39"
+        "title": "Post Test 2",
+        "text": "This is a mistake",
+        "id": "3281093e-22e9-4c01-bedb-4405cb2e9949"
     }
 ]
