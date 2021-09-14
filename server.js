@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const api = require('./routes/index');
+const compression = require('compression');
 
 const PORT = process.env.PORT || 3001;
 
@@ -9,6 +10,7 @@ const app = express();
 // Middleware for parsing post data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(compression());
 
 // Routing for all api calls
 app.use('/api', api);
